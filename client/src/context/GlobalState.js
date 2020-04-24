@@ -17,7 +17,6 @@ export const GlobalProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(AppReducer, initialState);
 
 	// Actions
-
 	async function getTransactions() {
 		try {
 			const res = await axios.get('/api/v1/transactions');
@@ -43,7 +42,6 @@ export const GlobalProvider = ({ children }) => {
 				payload: error.response.data.error
 			});
 		}
-
 		dispatch({
 			type: 'DELETE_TRANSACTION',
 			payload: id

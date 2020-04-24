@@ -4,7 +4,6 @@ import { numberWithCommas } from '../utils/format';
 
 export const Transaction = ({ transaction }) => {
 	const { deleteTransaction } = useContext(GlobalContext);
-
 	const sign = transaction.amount < 0 ? '-' : '+';
 
 	return (

@@ -5,18 +5,15 @@ import uuid from 'react-uuid';
 export const AddTransaction = () => {
 	const [text, setText] = useState('');
 	const [amount, setAmount] = useState('0');
-
 	const { addTransaction } = useContext(GlobalContext);
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-
 		const newTransaction = {
 			id: uuid(),
 			text,
 			amount: +amount //parse to number
 		};
-
 		addTransaction(newTransaction);
 	};
 
